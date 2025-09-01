@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Post Details - IndiaGuard AI</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body { background-color: #181a1b; color: #eeeeee; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; padding: 40px 60px; min-height: 100vh; }
+    .back-link { color: #00adb5; text-decoration: none; font-weight: 700; display: inline-block; margin-bottom: 30px; }
+    .back-link:hover { text-decoration: underline; }
+    .post-container { background-color: #222831; border-radius: 12px; padding: 30px 40px; box-shadow: 0 0 20px rgba(0, 173, 181, 0.3); max-width: 800px; margin: 0 auto; }
+    h1 { color: #00adb5; margin-bottom: 20px; }
+    .post-meta { color: #bfc6d0; margin-bottom: 15px; font-style: italic; display: flex; gap: 15px; flex-wrap: wrap; }
+    .post-content { font-size: 1.2rem; margin-bottom: 25px; }
+    .engagement-details { display: flex; gap: 20px; flex-wrap: wrap; }
+    .engagement-item { background-color: #181a1b; padding: 10px 18px; border-radius: 10px; min-width: 100px; text-align: center; font-weight: 600; color: #00e0e8; }
+    .keywords { margin-top: 25px; display: flex; flex-wrap: wrap; gap: 12px; }
+    .keyword-tag { background-color: #ff6b6b; color: #fff; padding: 6px 14px; border-radius: 20px; font-weight: 700; }
+    @media (max-width: 600px) { body { padding: 20px; } .post-container { padding: 20px; } }
+  </style>
+</head>
+<body>
+  <a href="dashboard.html" class="back-link">&larr; Back to Dashboard</a>
+
+  <div class="post-container" id="post-container"></div>
+
+  <script>
+    function getQueryParam(param) {
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get(param);
+    }
+
+    function formatDate(isoString) {
+      const date = new Date(isoString);
+      return date.toLocaleString(undefined, { dateStyle: 'medium', timeStyle: 'short' });
+    }
+
+    function createEngagementItem(label, value) {
+      return `<div class="engagement-item">${label}: ${value}</div>`;
+    }
+
+    async function loadPostDetails(postId) {
+      try {
+        const res = await fetch('data/flagged-posts.json');
+        if (!res.ok) throw new Error('Failed to load data');
+        const posts = await res.json();
+        const post = posts.find(p => p.id === postId);
+        if (!post) {
+          document.getElementById('post-container').innerHTML = '<p>Post not found.</p>';
+          return;
+        }
+
+        const flaggedLabel = post.flagged
+          ? '<span style="color:#ff6b6b;font-weight:bold;">Flagged as Anti-India</span>'
+          : '<span style="color:#00adb5;font-weight:bold;">Not Flagged</span>';
+
+        const keywordsHtml = (post.detected_keywords || [])
+          .map(k => `<div class="keyword-tag">${k}</div>`)
+          .join('');
+
+        const engagementHtml = [];
+        for (const [key, val] of Object.entries(post.engagement)) {
+          engagementHtml.push(createEngagementItem(key.charAt(0).toUpperCase() + key.slice(1), val));
+        }
+
+        document.getElementById('post-container').innerHTML = `
+          <h1>Post Details</h1>
+          <div class="post-meta">
+            <div>Platform: ${post.platform}</div>
+            <div>Author: ${post.author}</div>
+            <div>Timestamp: ${formatDate(post.timestamp)}</div>
+            <div>${flaggedLabel}</div>
+          </div>
+          <div class="post-content">${post.content}</div>
+          <div class="engagement-details">${engagementHtml.join('')}</div>
+          <h3>Detected Keywords:</h3>
+          <div class="keywords">${keywordsHtml}</div>
+          <h3>Influencer Score:</h3>
+          <div style="color:#00e0e8; font-weight:700; font-size:1.1rem;">${post.influencer_score.toFixed(2)}</div>
+        `;
+      } catch (error) {
+        console.error(error);
+        document.getElementById('post-container').innerHTML = '<p>Error loading post details.</p>';
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const postId = getQueryParam('id');
+      if (!postId) {
+        document.getElementById('post-container').innerHTML = '<p>No post ID provided.</p>';
+        return;
+      }
+      loadPostDetails(postId);
+    });
+  </script>
+</body>
+</html>

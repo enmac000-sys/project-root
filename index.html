@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Advanced AI-powered platform for detecting and monitoring cybersecurity threats across social media platforms." />
+  <meta name="keywords" content="AI, cybersecurity, monitoring, shield, social media, detection" />
+  <title>ShieldAI - Advanced Cybersecurity Platform</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='shieldGrad' x1='0%' y1='0%' x2='100%' y2='100%'><stop offset='0%' style='stop-color:%2300adb5;stop-opacity:1' /><stop offset='100%' style='stop-color:%2300e0e8;stop-opacity:1' /></linearGradient></defs><path d='M50 5 L80 20 L80 45 C80 65 65 80 50 85 C35 80 20 65 20 45 L20 20 Z' fill='url(%23shieldGrad)' stroke='%2300adb5' stroke-width='2'/><path d='M35 40 L45 50 L65 30' stroke='white' stroke-width='3' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>">
+</head>
+<body>
+  <header class="navbar">
+    <div class="container">
+      <div class="logo">
+        <svg class="logo-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="shieldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#00adb5;stop-opacity:1" />
+              <stop offset="100%" style="stop-color:#00e0e8;stop-opacity:1" />
+            </linearGradient>
+            <filter id="glow">
+              <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+              <feMerge> 
+                <feMergeNode in="coloredBlur"/>
+                <feMergeNode in="SourceGraphic"/>
+              </feMerge>
+            </filter>
+          </defs>
+          <path d="M50 5 L80 20 L80 45 C80 65 65 80 50 85 C35 80 20 65 20 45 L20 20 Z" fill="url(#shieldGrad)" stroke="#00adb5" stroke-width="2" filter="url(#glow)"/>
+          <path d="M35 40 L45 50 L65 30" stroke="white" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="50" cy="35" r="3" fill="#00e0e8" opacity="0.8"/>
+        </svg>
+        <span>ShieldAI</span>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="dashboard.html">Dashboard</a></li>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#about">About</a></li>
+        </ul>
+      </nav>
+      <div class="mobile-menu-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <div class="hero-text">
+            <div class="hero-badge">🚀 Advanced AI Platform</div>
+            <h1>Protecting Digital Sovereignty</h1>
+            <p>State-of-the-art AI-powered platform for real-time detection and monitoring of cybersecurity threats across social media platforms. Stay vigilant and protect digital assets with cutting-edge technology.</p>
+            <div class="hero-buttons">
+              <a href="dashboard.html" class="btn-primary">View Dashboard</a>
+              <a href="#features" class="btn-secondary">Learn More</a>
+            </div>
+            <div class="hero-stats">
+              <div class="stat">
+                <span class="stat-number">99.2%</span>
+                <span class="stat-label">Accuracy</span>
+              </div>
+              <div class="stat">
+                <span class="stat-number">24/7</span>
+                <span class="stat-label">Monitoring</span>
+              </div>
+              <div class="stat">
+                <span class="stat-number">AI</span>
+                <span class="stat-label">Powered</span>
+              </div>
+            </div>
+          </div>
+          <div class="hero-image">
+            <div class="hero-image-container">
+              <img src="https://img.icons8.com/ios-filled/100/00adb5/artificial-intelligence.png" alt="AI Technology" class="main-image" />
+              <div class="floating-elements">
+                <div class="floating-icon">🛡️</div>
+                <div class="floating-icon">📊</div>
+                <div class="floating-icon">🔍</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="features" class="features">
+      <div class="container">
+        <div class="section-header">
+          <h2>Advanced Features</h2>
+          <p>Cutting-edge technology designed to protect your digital landscape</p>
+        </div>
+        <div class="feature-grid">
+          <div class="feature-card">
+            <div class="feature-icon">
+              <img src="https://img.icons8.com/ios-filled/50/00adb5/radar.png" alt="Real-Time Monitoring" />
+            </div>
+            <h3>Real-Time Monitoring</h3>
+            <p>Continuously scan social media platforms for harmful content and anti-national sentiments with zero latency detection.</p>
+            <ul class="feature-list">
+              <li>24/7 automated scanning</li>
+              <li>Multi-platform coverage</li>
+              <li>Instant alert system</li>
+            </ul>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">
+              <img src="https://img.icons8.com/ios-filled/50/00adb5/artificial-intelligence.png" alt="AI" />
+            </div>
+            <h3>AI-Powered Detection</h3>
+            <p>Utilize advanced machine learning algorithms to identify flagged posts and influential accounts with high precision.</p>
+            <ul class="feature-list">
+              <li>Deep learning models</li>
+              <li>Sentiment analysis</li>
+              <li>Pattern recognition</li>
+            </ul>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">
+              <img src="https://img.icons8.com/ios-filled/50/00adb5/bar-chart.png" alt="Comprehensive Analytics" />
+            </div>
+            <h3>Comprehensive Analytics</h3>
+            <p>Get detailed insights on engagement metrics, reach analysis, and influencer scoring with interactive dashboards.</p>
+            <ul class="feature-list">
+              <li>Real-time dashboards</li>
+              <li>Trend analysis</li>
+              <li>Custom reports</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="live-stats">
+      <div class="container">
+        <div class="section-header">
+          <h2>Live Platform Statistics</h2>
+          <p>Real-time data from our active monitoring systems</p>
+        </div>
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-icon">📊</div>
+            <h3 class="counter" data-target="1247">0</h3>
+            <p>Posts Monitored</p>
+            <div class="stat-trend positive">+12% this week</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon">🚨</div>
+            <h3 class="counter" data-target="89">0</h3>
+            <p>Flagged Content</p>
+            <div class="stat-trend negative">-5% this week</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon">👥</div>
+            <h3 class="counter" data-target="156">0</h3>
+            <p>Influencers Tracked</p>
+            <div class="stat-trend positive">+8% this week</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon">🎯</div>
+            <h3 class="counter" data-target="99.2">0</h3>
+            <p>Accuracy Rate</p>
+            <div class="stat-trend positive">+0.3% this week</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="about">
+      <div class="container">
+        <div class="about-content">
+          <div class="about-text">
+            <h2>About ShieldAI</h2>
+            <p>ShieldAI is a cutting-edge cybersecurity platform developed to protect digital sovereignty. Our advanced AI algorithms monitor social media platforms in real-time, detecting and flagging content that may pose threats to cybersecurity.</p>
+            <p>Built with state-of-the-art machine learning technology, our platform provides comprehensive analytics and insights to help maintain the integrity of your digital landscape.</p>
+            <div class="tech-stack">
+              <h3>Technology Stack</h3>
+              <div class="tech-items">
+                <span class="tech-item">Machine Learning</span>
+                <span class="tech-item">Natural Language Processing</span>
+                <span class="tech-item">Real-time Analytics</span>
+                <span class="tech-item">Cloud Computing</span>
+              </div>
+            </div>
+          </div>
+          <div class="about-image">
+            <img src="https://img.icons8.com/ios-filled/100/00adb5/cyber-security.png" alt="Cybersecurity" />
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <div class="footer-logo">
+            <svg class="logo-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="footerShieldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" style="stop-color:#00adb5;stop-opacity:1" />
+                  <stop offset="100%" style="stop-color:#00e0e8;stop-opacity:1" />
+                </linearGradient>
+              </defs>
+              <path d="M50 5 L80 20 L80 45 C80 65 65 80 50 85 C35 80 20 65 20 45 L20 20 Z" fill="url(#footerShieldGrad)" stroke="#00adb5" stroke-width="2"/>
+              <path d="M35 40 L45 50 L65 30" stroke="white" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span>ShieldAI</span>
+          </div>
+          <p>Protecting digital sovereignty with advanced AI technology.</p>
+        </div>
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#about">About</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Contact</h3>
+          <p>Email: info@indiaguard.ai</p>
+          <p>Support: support@indiaguard.ai</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 ShieldAI - Cybersecurity Platform. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
